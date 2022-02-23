@@ -1,3 +1,198 @@
+>   install.packages("BiocManager")
+Error in install.packages : Updating loaded packages
+
+Restarting R session...
+
+Loading required package: AnnotationHub
+Loading required package: BiocGenerics
+
+Attaching package: 'BiocGenerics'
+
+The following objects are masked from 'package:stats':
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from 'package:base':
+
+    anyDuplicated, append, as.data.frame, basename, cbind, colnames, dirname, do.call, duplicated, eval, evalq,
+    Filter, Find, get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax,
+    pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply, union,
+    unique, unsplit, which.max, which.min
+
+Loading required package: BiocFileCache
+Loading required package: dbplyr
+Loading required package: ensembldb
+Loading required package: GenomicRanges
+Loading required package: stats4
+Loading required package: S4Vectors
+
+Attaching package: 'S4Vectors'
+
+The following objects are masked from 'package:base':
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: GenomicFeatures
+Loading required package: AnnotationDbi
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with 'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: 'Biobase'
+
+The following object is masked from 'package:AnnotationHub':
+
+    cache
+
+Loading required package: AnnotationFilter
+
+Attaching package: 'ensembldb'
+
+The following object is masked from 'package:stats':
+
+    filter
+
+Loading required package: GSEABase
+Loading required package: annotate
+Loading required package: XML
+Loading required package: graph
+
+Attaching package: 'graph'
+
+The following object is masked from 'package:XML':
+
+    addNode
+
+Loading required package: rols
+
+This is 'rols' version 2.22.0 
+
+> BiocManager::install("bioconductor")
+'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for details
+
+replacement repositories:
+    CRAN: https://cran.rstudio.com/
+
+Bioconductor version 3.14 (BiocManager 1.30.16), R 4.1.2 (2021-11-01)
+Installing package(s) 'bioconductor'
+Warning message:
+In .inet_warning(msg) :
+  package 'bioconductor' is not available for Bioconductor version '3.14'
+
+A version of this package for your version of R might be available elsewhere,
+see the ideas at
+https://cran.r-project.org/doc/manuals/r-patched/R-admin.html#Installing-packages
+> BiocManager::install("BSgenome")
+'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for details
+
+replacement repositories:
+    CRAN: https://cran.rstudio.com/
+
+Bioconductor version 3.14 (BiocManager 1.30.16), R 4.1.2 (2021-11-01)
+Warning message:
+package(s) not installed when version(s) same as current; use `force = TRUE` to re-install: 'BSgenome' 
+> # Bioconductor’s collection of annotation packages brings all elements of this hierarchy into a programmable environment.
+> # Reference genomic sequences are managed using the infrastructure of the Biostrings and BSgenome packages, 
+> # and the available.genomes function lists the reference genome build for humans and various model organisms now available.
+> library(Biostrings)
+Loading required package: XVector
+
+Attaching package: 'Biostrings'
+
+The following object is masked from 'package:graph':
+
+    complement
+
+The following object is masked from 'package:base':
+
+    strsplit
+
+> library(bioconductor)
+Error in library(bioconductor) : 
+  there is no package called 'bioconductor'
+> library(BSgenome)
+Loading required package: rtracklayer
+
+Attaching package: 'rtracklayer'
+
+The following object is masked from 'package:AnnotationHub':
+
+    hubUrl
+
+> ag = available.genomes()
+'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for details
+
+replacement repositories:
+    CRAN: https://cran.rstudio.com/
+
+> length(ag)
+[1] 106
+> # we can see there is 106 genomes available 
+> # lets display the first couple using head()
+> head(ag)
+[1] "BSgenome.Alyrata.JGI.v1"                 "BSgenome.Amellifera.BeeBase.assembly4"  
+[3] "BSgenome.Amellifera.NCBI.AmelHAv3.1"     "BSgenome.Amellifera.UCSC.apiMel2"       
+[5] "BSgenome.Amellifera.UCSC.apiMel2.masked" "BSgenome.Aofficinalis.NCBI.V1"          
+> # A reference genomic sequence for H. sapiens
+> # The reference sequence for Homo sapiens is acquired by installing and attaching a single package. 
+> # This is in contrast to downloading and parsing FASTA files. 
+> # The package defines an object Hsapiens that is the source of chromosomal sequence, but when evaluated on its own provides a report of the origins of the sequence data that it contains.
+> BiocManager::install("BSgenome.Hsapiens.UCSC.hg19")
+'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for details
+
+replacement repositories:
+    CRAN: https://cran.rstudio.com/
+
+Bioconductor version 3.14 (BiocManager 1.30.16), R 4.1.2 (2021-11-01)
+Warning message:
+package(s) not installed when version(s) same as current; use `force = TRUE` to re-install:
+  'BSgenome.Hsapiens.UCSC.hg19' 
+> library(BSgenome.Hsapiens.UCSC.hg19)
+> Hsapiens
+Human genome:
+# organism: Homo sapiens (Human)
+# genome: hg19
+# provider: UCSC
+# release date: June 2013
+# 298 sequences:
+#   chr1                  chr2                  chr3                  chr4                 
+#   chr5                  chr6                  chr7                  chr8                 
+#   chr9                  chr10                 chr11                 chr12                
+#   chr13                 chr14                 chr15                 chr16                
+#   chr17                 chr18                 chr19                 chr20                
+#   ...                   ...                   ...                   ...                  
+#   chr19_gl383575_alt    chr19_gl383576_alt    chr19_gl949746_alt    chr19_gl949747_alt   
+#   chr19_gl949748_alt    chr19_gl949749_alt    chr19_gl949750_alt    chr19_gl949751_alt   
+#   chr19_gl949752_alt    chr19_gl949753_alt    chr20_gl383577_alt    chr21_gl383578_alt   
+#   chr21_gl383579_alt    chr21_gl383580_alt    chr21_gl383581_alt    chr22_gl383582_alt   
+#   chr22_gl383583_alt    chr22_kb663609_alt                                               
+# (use 'seqnames()' to see all the sequence names, use the '$' or '[[' operator to access a given
+# sequence)
+> head(genome(Hsapiens))
+  chr1   chr2   chr3   chr4   chr5   chr6 
+"hg19" "hg19" "hg19" "hg19" "hg19" "hg19" 
+> # Get the chromosome's sequence using the $ operator 
+> Hsapiens$chr17
+81195210-letter DNAString object
+seq: AAGCTTCTCACCCTGTTCCTGCATAGATAATTGCATGACAATTGCCTTG...GTGGGTGTGGGTGTGGGTGTGGGTGTGGTGTGTGGGTGTGGGTGTGGT
+> # UCSC annotation
+> # The TxDb family of packages and data objects manages information on transcripts and gene models. 
+> # We consider those derived from annotation tables prepared for the UCSC genome browser.
+> BiocManager::install("TxDb.Hsapiens.UCSC.hg19.knownGene")
+'getOption("repos")' replaces Bioconductor standard repositories, see '?repositories' for details
+
+replacement repositories:
+    CRAN: https://cran.rstudio.com/
+
+Bioconductor version 3.14 (BiocManager 1.30.16), R 4.1.2 (2021-11-01)
+Warning message:
+package(s) not installed when version(s) same as current; use `force = TRUE` to re-install:
+  'TxDb.Hsapiens.UCSC.hg19.knownGene' 
 > library(TxDb.Hsapiens.UCSC.hg19.knownGene)
 Loading required package: GenomicFeatures
 Loading required package: AnnotationDbi
